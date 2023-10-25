@@ -5,7 +5,7 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
-namespace Spryker\Zed\ShipmentTypeStorage\Communication\Plugin\Publisher\ShipmentType;
+namespace Spryker\Zed\ShipmentTypeStorage\Communication\Plugin\Publisher\ShipmentMethod;
 
 use Spryker\Shared\ShipmentTypeStorage\ShipmentTypeStorageConfig;
 use Spryker\Zed\Kernel\Communication\AbstractPlugin;
@@ -16,12 +16,13 @@ use Spryker\Zed\PublisherExtension\Dependency\Plugin\PublisherPluginInterface;
  * @method \Spryker\Zed\ShipmentTypeStorage\Business\ShipmentTypeStorageFacadeInterface getFacade()
  * @method \Spryker\Zed\ShipmentTypeStorage\Communication\ShipmentTypeStorageCommunicationFactory getFactory()
  */
-class ShipmentTypeWriterPublisherPlugin extends AbstractPlugin implements PublisherPluginInterface
+class ShipmentMethodPublishShipmentTypeWriterPublisherPlugin extends AbstractPlugin implements PublisherPluginInterface
 {
     /**
      * {@inheritDoc}
-     * - Publishes shipment type data by `SpyShipmentType` entity events.
-     * - Extracts shipment type IDs from the `$eventEntityTransfers` created by shipment type entity events and shipment type publish event.
+     * - Publishes shipment type data by `ShipmentMethod` publish events.
+     * - Extracts shipment method IDs from the `$eventEntityTransfers` created by shipment method publish event.
+     * - Finds shipment type IDs by shipment method IDs.
      * - Expands shipment type storage data with related shipment method IDs.
      * - Executes stack of {@link \Spryker\Zed\ShipmentTypeStorageExtension\Dependency\Plugin\ShipmentTypeStorageExpanderPluginInterface} plugins.
      * - Stores data in storage table.
@@ -36,7 +37,7 @@ class ShipmentTypeWriterPublisherPlugin extends AbstractPlugin implements Publis
      */
     public function handleBulk(array $eventEntityTransfers, $eventName): void
     {
-        $this->getFacade()->writeShipmentTypeStorageCollectionByShipmentTypeEvents($eventEntityTransfers);
+        $this->getFacade()->writeShipmentTypeStorageCollectionByShipmentMethodPublishEvents($eventEntityTransfers);
     }
 
     /**
@@ -49,9 +50,7 @@ class ShipmentTypeWriterPublisherPlugin extends AbstractPlugin implements Publis
     public function getSubscribedEvents(): array
     {
         return [
-            ShipmentTypeStorageConfig::ENTITY_SPY_SHIPMENT_TYPE_CREATE,
-            ShipmentTypeStorageConfig::ENTITY_SPY_SHIPMENT_TYPE_UPDATE,
-            ShipmentTypeStorageConfig::SHIPMENT_TYPE_PUBLISH,
+            ShipmentTypeStorageConfig::SHIPMENT_METHOD_PUBLISH,
         ];
     }
 }
