@@ -59,8 +59,8 @@ class WriteShipmentTypeStorageCollectionByShipmentMethodStoreEventsTest extends 
 
         $this->tester->ensureShipmentTypeStorageTableIsEmpty();
         $this->tester->ensureStoreTableIsEmpty();
-        $this->tester->setUpQueueAdapter();
         $this->tester->setUpShipmentTypeShipmentMethodCollectionExpanderPluginDependency();
+        $this->tester->setUpQueueAdapter();
     }
 
     /**

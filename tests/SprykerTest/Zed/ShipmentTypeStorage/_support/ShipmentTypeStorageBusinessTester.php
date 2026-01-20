@@ -22,6 +22,7 @@ use Orm\Zed\ShipmentTypeStorage\Persistence\SpyShipmentTypeStorage;
 use Orm\Zed\ShipmentTypeStorage\Persistence\SpyShipmentTypeStorageQuery;
 use Orm\Zed\Store\Persistence\SpyStoreQuery;
 use Spryker\Client\Kernel\Container;
+use Spryker\Client\Queue\QueueDependencyProvider;
 use Spryker\Zed\ShipmentType\Communication\Plugin\Shipment\ShipmentTypeShipmentMethodCollectionExpanderPlugin;
 use Spryker\Zed\ShipmentTypeStorage\Dependency\Facade\ShipmentTypeStorageToShipmentTypeFacadeInterface;
 use Spryker\Zed\ShipmentTypeStorage\Dependency\Facade\ShipmentTypeStorageToStoreFacadeInterface;
@@ -66,6 +67,16 @@ class ShipmentTypeStorageBusinessTester extends Actor
      * @var string
      */
     protected const PLUGINS_SHIPMENT_METHOD_COLLECTION_EXPANDER = 'PLUGINS_SHIPMENT_METHOD_COLLECTION_EXPANDER';
+
+    public function setUpQueueAdapter(): void
+    {
+        $this->setDependency(QueueDependencyProvider::QUEUE_ADAPTERS, function (Container $container) {
+            return [
+                $container->getLocator()->rabbitMq()->client()->createQueueAdapter(),
+                $container->getLocator()->symfonyMessenger()->client()->createQueueAdapter(),
+            ];
+        });
+    }
 
     /**
      * @param int $idShipmentType
@@ -194,18 +205,6 @@ class ShipmentTypeStorageBusinessTester extends Actor
         $this->setDependency(static::PLUGINS_SHIPMENT_METHOD_COLLECTION_EXPANDER, function () {
             return [
                 new ShipmentTypeShipmentMethodCollectionExpanderPlugin(),
-            ];
-        });
-    }
-
-    /**
-     * @return void
-     */
-    public function setUpQueueAdapter(): void
-    {
-        $this->setDependency(static::QUEUE_ADAPTERS, function (Container $container) {
-            return [
-                $container->getLocator()->rabbitMq()->client()->createQueueAdapter(),
             ];
         });
     }

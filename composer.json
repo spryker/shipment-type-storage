@@ -23,6 +23,7 @@
     "require-dev": {
         "spryker/code-sniffer": "*",
         "spryker/container": "*",
+        "spryker/queue": "*",
         "spryker/rabbit-mq": "*",
         "spryker/testify": "*"
     },
