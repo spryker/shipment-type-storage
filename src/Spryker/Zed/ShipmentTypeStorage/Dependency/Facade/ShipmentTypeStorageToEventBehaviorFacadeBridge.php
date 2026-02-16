@@ -23,9 +23,9 @@ class ShipmentTypeStorageToEventBehaviorFacadeBridge implements ShipmentTypeStor
     }
 
     /**
-     * @param list<\Generated\Shared\Transfer\EventEntityTransfer> $eventTransfers
+     * @param array<\Generated\Shared\Transfer\EventEntityTransfer> $eventTransfers
      *
-     * @return list<int>
+     * @return array<int>
      */
     public function getEventTransferIds(array $eventTransfers): array
     {
@@ -33,10 +33,10 @@ class ShipmentTypeStorageToEventBehaviorFacadeBridge implements ShipmentTypeStor
     }
 
     /**
-     * @param list<\Generated\Shared\Transfer\EventEntityTransfer> $eventTransfers
+     * @param array<\Generated\Shared\Transfer\EventEntityTransfer> $eventTransfers
      * @param string $foreignKeyColumnName
      *
-     * @return list<int>
+     * @return array<int>
      */
     public function getEventTransferForeignKeys(array $eventTransfers, string $foreignKeyColumnName): array
     {

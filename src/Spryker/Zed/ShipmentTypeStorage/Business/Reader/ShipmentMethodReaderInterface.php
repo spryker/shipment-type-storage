@@ -19,14 +19,14 @@ interface ShipmentMethodReaderInterface
     public function getActiveShipmentMethodCollectionTransferForStore(string $storeName): ShipmentMethodCollectionTransfer;
 
     /**
-     * @param list<int> $shipmentMethodIds
+     * @param array<int> $shipmentMethodIds
      *
      * @return \Generated\Shared\Transfer\ShipmentMethodCollectionTransfer
      */
     public function getShipmentMethodCollectionByShipmentMethodIds(array $shipmentMethodIds): ShipmentMethodCollectionTransfer;
 
     /**
-     * @param list<int> $shipmentCarrierIds
+     * @param array<int> $shipmentCarrierIds
      *
      * @return \Generated\Shared\Transfer\ShipmentMethodCollectionTransfer
      */

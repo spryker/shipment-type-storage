@@ -29,7 +29,7 @@ interface ShipmentTypeStorageEntityManagerInterface
     public function saveShipmentTypeStorage(ShipmentTypeStorageTransfer $shipmentTypeStorageTransfer, string $storeName): void;
 
     /**
-     * @param list<int> $shipmentTypeIds
+     * @param array<int> $shipmentTypeIds
      * @param string|null $storeName
      *
      * @return void

@@ -12,7 +12,7 @@ use Generated\Shared\Transfer\StorageScanResultTransfer;
 interface ShipmentTypeStorageToStorageClientInterface
 {
     /**
-     * @param list<string> $keys
+     * @param array<string> $keys
      *
      * @return array<string, string|null>
      */

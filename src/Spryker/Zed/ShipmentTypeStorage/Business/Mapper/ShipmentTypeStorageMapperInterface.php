@@ -10,10 +10,10 @@ namespace Spryker\Zed\ShipmentTypeStorage\Business\Mapper;
 interface ShipmentTypeStorageMapperInterface
 {
     /**
-     * @param list<\Generated\Shared\Transfer\ShipmentTypeTransfer> $shipmentTypeTransfers
-     * @param list<\Generated\Shared\Transfer\ShipmentTypeStorageTransfer> $shipmentTypeStorageTransfers
+     * @param array<\Generated\Shared\Transfer\ShipmentTypeTransfer> $shipmentTypeTransfers
+     * @param array<\Generated\Shared\Transfer\ShipmentTypeStorageTransfer> $shipmentTypeStorageTransfers
      *
-     * @return list<\Generated\Shared\Transfer\ShipmentTypeStorageTransfer>
+     * @return array<\Generated\Shared\Transfer\ShipmentTypeStorageTransfer>
      */
     public function mapShipmentTypeTransfersToShipmentTypeStorageTransfers(
         array $shipmentTypeTransfers,

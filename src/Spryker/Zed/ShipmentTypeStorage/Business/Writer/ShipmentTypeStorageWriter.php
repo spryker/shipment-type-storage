@@ -108,7 +108,7 @@ class ShipmentTypeStorageWriter implements ShipmentTypeStorageWriterInterface
     }
 
     /**
-     * @param list<\Generated\Shared\Transfer\EventEntityTransfer> $eventEntityTransfers
+     * @param array<\Generated\Shared\Transfer\EventEntityTransfer> $eventEntityTransfers
      *
      * @return void
      */
@@ -120,7 +120,7 @@ class ShipmentTypeStorageWriter implements ShipmentTypeStorageWriterInterface
     }
 
     /**
-     * @param list<\Generated\Shared\Transfer\EventEntityTransfer> $eventEntityTransfers
+     * @param array<\Generated\Shared\Transfer\EventEntityTransfer> $eventEntityTransfers
      *
      * @return void
      */
@@ -132,7 +132,7 @@ class ShipmentTypeStorageWriter implements ShipmentTypeStorageWriterInterface
     }
 
     /**
-     * @param list<\Generated\Shared\Transfer\EventEntityTransfer> $eventEntityTransfers
+     * @param array<\Generated\Shared\Transfer\EventEntityTransfer> $eventEntityTransfers
      *
      * @return void
      */
@@ -144,7 +144,7 @@ class ShipmentTypeStorageWriter implements ShipmentTypeStorageWriterInterface
     }
 
     /**
-     * @param list<\Generated\Shared\Transfer\EventEntityTransfer> $eventEntityTransfers
+     * @param array<\Generated\Shared\Transfer\EventEntityTransfer> $eventEntityTransfers
      *
      * @return void
      */
@@ -156,7 +156,7 @@ class ShipmentTypeStorageWriter implements ShipmentTypeStorageWriterInterface
     }
 
     /**
-     * @param list<\Generated\Shared\Transfer\EventEntityTransfer> $eventEntityTransfers
+     * @param array<\Generated\Shared\Transfer\EventEntityTransfer> $eventEntityTransfers
      *
      * @return void
      */
@@ -168,7 +168,7 @@ class ShipmentTypeStorageWriter implements ShipmentTypeStorageWriterInterface
     }
 
     /**
-     * @param list<\Generated\Shared\Transfer\EventEntityTransfer> $eventEntityTransfers
+     * @param array<\Generated\Shared\Transfer\EventEntityTransfer> $eventEntityTransfers
      *
      * @return void
      */
@@ -183,7 +183,7 @@ class ShipmentTypeStorageWriter implements ShipmentTypeStorageWriterInterface
     }
 
     /**
-     * @param list<int> $shipmentMethodIds
+     * @param array<int> $shipmentMethodIds
      *
      * @return void
      */
@@ -291,7 +291,7 @@ class ShipmentTypeStorageWriter implements ShipmentTypeStorageWriterInterface
     }
 
     /**
-     * @param list<\Generated\Shared\Transfer\ShipmentTypeStorageTransfer> $shipmentTypeStorageTransfers
+     * @param array<\Generated\Shared\Transfer\ShipmentTypeStorageTransfer> $shipmentTypeStorageTransfers
      * @param string $storeName
      *
      * @return void
@@ -304,7 +304,7 @@ class ShipmentTypeStorageWriter implements ShipmentTypeStorageWriterInterface
     }
 
     /**
-     * @param list<int> $shipmentTypeIds
+     * @param array<int> $shipmentTypeIds
      *
      * @return \Generated\Shared\Transfer\ShipmentTypeCriteriaTransfer
      */
