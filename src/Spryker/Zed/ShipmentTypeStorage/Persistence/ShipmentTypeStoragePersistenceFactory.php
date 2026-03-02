@@ -20,9 +20,6 @@ use Spryker\Zed\ShipmentTypeStorage\ShipmentTypeStorageDependencyProvider;
  */
 class ShipmentTypeStoragePersistenceFactory extends AbstractPersistenceFactory
 {
-    /**
-     * @return \Orm\Zed\ShipmentTypeStorage\Persistence\SpyShipmentTypeStorageQuery
-     */
     public function createShipmentTypeStorageQuery(): SpyShipmentTypeStorageQuery
     {
         return SpyShipmentTypeStorageQuery::create();
@@ -38,9 +35,6 @@ class ShipmentTypeStoragePersistenceFactory extends AbstractPersistenceFactory
         return SpyShipmentTypeListStorageQuery::create();
     }
 
-    /**
-     * @return \Spryker\Zed\ShipmentTypeStorage\Dependency\Facade\ShipmentTypeStorageToPropelFacadeInterface
-     */
     public function getPropelFacade(): ShipmentTypeStorageToPropelFacadeInterface
     {
         return $this->getProvidedDependency(ShipmentTypeStorageDependencyProvider::FACADE_PROPEL);

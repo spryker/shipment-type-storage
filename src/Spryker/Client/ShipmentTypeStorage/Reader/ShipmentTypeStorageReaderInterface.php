@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\ShipmentTypeStorageCriteriaTransfer;
 
 interface ShipmentTypeStorageReaderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentTypeStorageCriteriaTransfer $shipmentTypeStorageCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShipmentTypeStorageCollectionTransfer
-     */
     public function getShipmentTypeStorageCollection(
         ShipmentTypeStorageCriteriaTransfer $shipmentTypeStorageCriteriaTransfer
     ): ShipmentTypeStorageCollectionTransfer;

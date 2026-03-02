@@ -12,10 +12,5 @@ use Generated\Shared\Transfer\ShipmentTypeCollectionTransfer;
 
 interface ShipmentTypeReaderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShipmentTypeCollectionTransfer
-     */
     public function getAvailableShipmentTypes(QuoteTransfer $quoteTransfer): ShipmentTypeCollectionTransfer;
 }

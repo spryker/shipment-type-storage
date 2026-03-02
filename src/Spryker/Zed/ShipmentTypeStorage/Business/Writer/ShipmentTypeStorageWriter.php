@@ -80,15 +80,6 @@ class ShipmentTypeStorageWriter implements ShipmentTypeStorageWriterInterface
      */
     protected ShipmentTypeStorageToEventBehaviorFacadeInterface $eventBehaviorFacade;
 
-    /**
-     * @param \Spryker\Zed\ShipmentTypeStorage\Persistence\ShipmentTypeStorageEntityManagerInterface $shipmentTypeStorageEntityManager
-     * @param \Spryker\Zed\ShipmentTypeStorage\Business\Reader\ShipmentMethodReaderInterface $shipmentMethodReader
-     * @param \Spryker\Zed\ShipmentTypeStorage\Business\Mapper\ShipmentTypeStorageMapperInterface $shipmentTypeStorageMapper
-     * @param \Spryker\Zed\ShipmentTypeStorage\Business\Expander\ShipmentTypeStorageExpanderInterface $shipmentTypeStorageExpander
-     * @param \Spryker\Zed\ShipmentTypeStorage\Dependency\Facade\ShipmentTypeStorageToShipmentTypeFacadeInterface $shipmentTypeFacade
-     * @param \Spryker\Zed\ShipmentTypeStorage\Dependency\Facade\ShipmentTypeStorageToStoreFacadeInterface $storeFacade
-     * @param \Spryker\Zed\ShipmentTypeStorage\Dependency\Facade\ShipmentTypeStorageToEventBehaviorFacadeInterface $eventBehaviorFacade
-     */
     public function __construct(
         ShipmentTypeStorageEntityManagerInterface $shipmentTypeStorageEntityManager,
         ShipmentMethodReaderInterface $shipmentMethodReader,
@@ -269,12 +260,6 @@ class ShipmentTypeStorageWriter implements ShipmentTypeStorageWriterInterface
         return [$shipmentTypeTransfersWithStoreRelation, $shipmentTypeTransfersWithoutStoreRelation];
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentTypeTransfer $shipmentTypeTransfer
-     * @param string $storeName
-     *
-     * @return bool
-     */
     protected function isShipmentTypeHasStoreRelation(ShipmentTypeTransfer $shipmentTypeTransfer, string $storeName): bool
     {
         if (!$shipmentTypeTransfer->getStoreRelation()) {
@@ -337,9 +322,6 @@ class ShipmentTypeStorageWriter implements ShipmentTypeStorageWriterInterface
         return array_unique($shipmentTypeIds);
     }
 
-    /**
-     * @return void
-     */
     protected function updateShipmentTypeListStorage(): void
     {
         if (!$this->shipmentTypeStorageEntityManager->isShipmentTypeListStorageTableExists()) {

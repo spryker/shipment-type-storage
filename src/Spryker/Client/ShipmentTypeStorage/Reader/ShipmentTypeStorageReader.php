@@ -81,11 +81,6 @@ class ShipmentTypeStorageReader implements ShipmentTypeStorageReaderInterface
         $this->synchronizationService = $synchronizationService;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentTypeStorageCriteriaTransfer $shipmentTypeStorageCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShipmentTypeStorageCollectionTransfer
-     */
     public function getShipmentTypeStorageCollection(
         ShipmentTypeStorageCriteriaTransfer $shipmentTypeStorageCriteriaTransfer
     ): ShipmentTypeStorageCollectionTransfer {
@@ -97,11 +92,6 @@ class ShipmentTypeStorageReader implements ShipmentTypeStorageReaderInterface
         return $this->executeShipmentTypeStorageExpanderPlugins($shipmentTypeStorageCollectionTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentTypeStorageCriteriaTransfer $shipmentTypeStorageCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShipmentTypeStorageCollectionTransfer
-     */
     protected function getShipmentTypeStorageCollectionByCriteria(
         ShipmentTypeStorageCriteriaTransfer $shipmentTypeStorageCriteriaTransfer
     ): ShipmentTypeStorageCollectionTransfer {
@@ -124,11 +114,6 @@ class ShipmentTypeStorageReader implements ShipmentTypeStorageReaderInterface
         return new ShipmentTypeStorageCollectionTransfer();
     }
 
-    /**
-     * @param string $storeName
-     *
-     * @return \Generated\Shared\Transfer\ShipmentTypeStorageCollectionTransfer
-     */
     protected function getShipmentTypeStorageByStore(string $storeName): ShipmentTypeStorageCollectionTransfer
     {
         $shipmentTypeStorageConditionsTransfer = (new ShipmentTypeStorageConditionsTransfer())
@@ -152,11 +137,6 @@ class ShipmentTypeStorageReader implements ShipmentTypeStorageReaderInterface
         return $shipmentTypeList[ShipmentTypeListStorageTransfer::UUIDS] ?? $this->shipmentTypeStorageKeyScanner->scanShipmentTypeUuids();
     }
 
-    /**
-     * @param string $storeName
-     *
-     * @return string
-     */
     protected function generateKey(string $storeName): string
     {
         $synchronizationDataTransfer = new SynchronizationDataTransfer();
@@ -167,11 +147,6 @@ class ShipmentTypeStorageReader implements ShipmentTypeStorageReaderInterface
             ->generateKey($synchronizationDataTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentTypeStorageConditionsTransfer $shipmentTypeStorageConditionsTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShipmentTypeStorageCollectionTransfer
-     */
     protected function getShipmentTypeStorageByUuids(
         ShipmentTypeStorageConditionsTransfer $shipmentTypeStorageConditionsTransfer
     ): ShipmentTypeStorageCollectionTransfer {
@@ -197,11 +172,6 @@ class ShipmentTypeStorageReader implements ShipmentTypeStorageReaderInterface
         return $this->getShipmentTypeStorageByShipmentTypeIds($shipmentTypeStorageConditionsTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentTypeStorageConditionsTransfer $shipmentTypeStorageConditionsTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShipmentTypeStorageCollectionTransfer
-     */
     protected function getShipmentTypeStorageByShipmentTypeIds(
         ShipmentTypeStorageConditionsTransfer $shipmentTypeStorageConditionsTransfer
     ): ShipmentTypeStorageCollectionTransfer {
@@ -260,11 +230,6 @@ class ShipmentTypeStorageReader implements ShipmentTypeStorageReaderInterface
         return $shipmentTypeIds;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentTypeStorageCollectionTransfer $shipmentTypeStorageCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShipmentTypeStorageCollectionTransfer
-     */
     protected function executeShipmentTypeStorageExpanderPlugins(
         ShipmentTypeStorageCollectionTransfer $shipmentTypeStorageCollectionTransfer
     ): ShipmentTypeStorageCollectionTransfer {

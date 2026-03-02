@@ -33,9 +33,6 @@ class WriteShipmentTypeStorageCollectionByShipmentTypeEventsTest extends Unit
      */
     protected ShipmentTypeStorageBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -45,9 +42,6 @@ class WriteShipmentTypeStorageCollectionByShipmentTypeEventsTest extends Unit
         $this->tester->setUpQueueAdapter();
     }
 
-    /**
-     * @return void
-     */
     public function testPersistsShipmentTypeStorageData(): void
     {
         // Arrange
@@ -73,9 +67,6 @@ class WriteShipmentTypeStorageCollectionByShipmentTypeEventsTest extends Unit
         $this->assertSame($shipmentTypeTransfer->getIdShipmentTypeOrFail(), $shipmentTypeStorageTransfer->getIdShipmentType());
     }
 
-    /**
-     * @return void
-     */
     public function testDoesNothingWhenNotExistingIdShipmentTypeProvided(): void
     {
         // Arrange
@@ -90,9 +81,6 @@ class WriteShipmentTypeStorageCollectionByShipmentTypeEventsTest extends Unit
         $this->assertSame(0, $this->tester->getShipmentTypeListStorageEntitiesCount());
     }
 
-    /**
-     * @return void
-     */
     public function testDoesNothingWhenIdOfInactiveShipmentTypeIsProvided(): void
     {
         // Arrange
@@ -111,9 +99,6 @@ class WriteShipmentTypeStorageCollectionByShipmentTypeEventsTest extends Unit
         $this->assertSame(0, $this->tester->getShipmentTypeListStorageEntitiesCount());
     }
 
-    /**
-     * @return void
-     */
     public function testDoesNothingWhenIdOfShipmentTypeWithoutStoreRelationIsProvided(): void
     {
         // Arrange
@@ -130,9 +115,6 @@ class WriteShipmentTypeStorageCollectionByShipmentTypeEventsTest extends Unit
         $this->assertSame(0, $this->tester->getShipmentTypeListStorageEntitiesCount());
     }
 
-    /**
-     * @return void
-     */
     public function testRemovesShipmentTypeStorageWhenIdOfDeactivatedShipmentTypeIsProvided(): void
     {
         // Arrange
@@ -155,9 +137,6 @@ class WriteShipmentTypeStorageCollectionByShipmentTypeEventsTest extends Unit
         $this->assertSame(0, $this->tester->getShipmentTypeListStorageEntitiesCount());
     }
 
-    /**
-     * @return void
-     */
     public function testExpandsStorageDataWithShipmentMethodIds(): void
     {
         // Arrange
@@ -205,9 +184,6 @@ class WriteShipmentTypeStorageCollectionByShipmentTypeEventsTest extends Unit
         $this->assertCount(0, $shipmentTypeStorageTransferWithoutShipmentMethodIds->getShipmentMethodIds());
     }
 
-    /**
-     * @return void
-     */
     public function testWriteShipmentTypeStorageCollectionByShipmentTypeEventsExecutesExpanderPlugins(): void
     {
         // Assert
@@ -228,9 +204,6 @@ class WriteShipmentTypeStorageCollectionByShipmentTypeEventsTest extends Unit
         $this->tester->getFacade()->writeShipmentTypeStorageCollectionByShipmentTypeEvents([$eventEntityTransfer]);
     }
 
-    /**
-     * @return void
-     */
     public function testWriteShipmentTypeStorageCollectionByShipmentTypeEventsShouldEarlyReturnWhenShipmentTypeCollectionIsEmpty(): void
     {
         // Arrange

@@ -9,10 +9,5 @@ namespace Spryker\Zed\ShipmentTypeStorage\Dependency\Facade;
 
 interface ShipmentTypeStorageToPropelFacadeInterface
 {
-    /**
-     * @param string $tableName
-     *
-     * @return bool
-     */
     public function tableExists(string $tableName): bool;
 }

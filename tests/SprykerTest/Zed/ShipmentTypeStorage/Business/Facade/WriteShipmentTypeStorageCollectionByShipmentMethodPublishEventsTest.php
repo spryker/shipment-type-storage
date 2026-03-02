@@ -32,9 +32,6 @@ class WriteShipmentTypeStorageCollectionByShipmentMethodPublishEventsTest extend
      */
     protected ShipmentTypeStorageBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -45,9 +42,6 @@ class WriteShipmentTypeStorageCollectionByShipmentMethodPublishEventsTest extend
         $this->tester->setUpQueueAdapter();
     }
 
-    /**
-     * @return void
-     */
     public function testPersistsShipmentTypeStorageData(): void
     {
         // Arrange
@@ -81,9 +75,6 @@ class WriteShipmentTypeStorageCollectionByShipmentMethodPublishEventsTest extend
         $this->assertContainsEquals($shipmentMethodTransfer->getIdShipmentMethodOrFail(), $shipmentTypeStorageTransfer->getShipmentMethodIds());
     }
 
-    /**
-     * @return void
-     */
     public function testRemovesShipmentMethodIdWhenShipmentMethodIsDeactivated(): void
     {
         // Arrange
@@ -130,9 +121,6 @@ class WriteShipmentTypeStorageCollectionByShipmentMethodPublishEventsTest extend
         $this->assertNotContainsEquals($shipmentMethodTransfer2->getIdShipmentMethodOrFail(), $shipmentTypeStorageTransfer->getShipmentMethodIds());
     }
 
-    /**
-     * @return void
-     */
     public function testRemovesShipmentMethodIdWhenShipmentMethodShipmentTypeRelationIsRemoved(): void
     {
         // Arrange

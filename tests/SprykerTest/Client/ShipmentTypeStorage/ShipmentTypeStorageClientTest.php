@@ -75,9 +75,6 @@ class ShipmentTypeStorageClientTest extends Unit
      */
     protected ShipmentTypeStorageClientTester $tester;
 
-    /**
-     * @return void
-     */
     public function testGetShipmentTypeStorageCollectionThrowsAnExceptionWhenCriteriaWithNoConditionsTransferIsProvided(): void
     {
         // Assert
@@ -87,9 +84,6 @@ class ShipmentTypeStorageClientTest extends Unit
         $this->tester->getClient()->getShipmentTypeStorageCollection(new ShipmentTypeStorageCriteriaTransfer());
     }
 
-    /**
-     * @return void
-     */
     public function testGetShipmentTypeStorageCollectionThrowsAnExceptionWhenConditionsTransferWithoutStoreNameIsProvided(): void
     {
         // Arrange
@@ -104,9 +98,6 @@ class ShipmentTypeStorageClientTest extends Unit
         $this->tester->getClient()->getShipmentTypeStorageCollection($shipmentTypeStorageCriteriaTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testGetShipmentTypeStorageCollectionThrowsAnExceptionWhenStoreNameCriteriaWasNotProvided(): void
     {
         // Assert
@@ -121,9 +112,6 @@ class ShipmentTypeStorageClientTest extends Unit
         $this->tester->getClient()->getShipmentTypeStorageCollection($shipmentTypeStorageCriteriaTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testGetShipmentTypeStorageCollectionReturnsCollectionFilteredByStoreNameToAvoidScanAndUseGet(): void
     {
         // Arrange
@@ -159,9 +147,6 @@ class ShipmentTypeStorageClientTest extends Unit
         $this->assertCount(2, $shipmentTypeStorageCollectionTransfer->getShipmentTypeStorages());
     }
 
-    /**
-     * @return void
-     */
     public function testGetShipmentTypeStorageCollectionReturnsCollectionFilteredByStoreName(): void
     {
         // Arrange
@@ -197,9 +182,6 @@ class ShipmentTypeStorageClientTest extends Unit
         $this->assertCount(2, $shipmentTypeStorageCollectionTransfer->getShipmentTypeStorages());
     }
 
-    /**
-     * @return void
-     */
     public function testGetShipmentTypeStorageCollectionReturnsCollectionFilteredByStoreNameByGetKeysFallbackFunction(): void
     {
         // Arrange
@@ -220,9 +202,6 @@ class ShipmentTypeStorageClientTest extends Unit
         $this->tester->getClient()->getShipmentTypeStorageCollection($shipmentTypeStorageCriteriaTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testGetShipmentTypeStorageCollectionFiltersStorageDataByShipmentTypeIdsAccordingToProvidedConditions(): void
     {
         // Arrange
@@ -249,9 +228,6 @@ class ShipmentTypeStorageClientTest extends Unit
         $this->tester->getClient()->getShipmentTypeStorageCollection($shipmentTypeStorageCriteriaTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testGetShipmentTypeStorageCollectionFiltersStorageDataByUuidAccordingToProvidedConditions(): void
     {
         // Arrange
@@ -279,9 +255,6 @@ class ShipmentTypeStorageClientTest extends Unit
         $this->tester->getClient()->getShipmentTypeStorageCollection($shipmentTypeStorageCriteriaTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testGetShipmentTypeStorageCollectionReturnsEmptyCollectionWhenNoStorageDataFoundByShipmentTypeIds(): void
     {
         // Arrange
@@ -303,9 +276,6 @@ class ShipmentTypeStorageClientTest extends Unit
         $this->assertCount(0, $shipmentTypeStorageCollectionTransfer->getShipmentTypeStorages());
     }
 
-    /**
-     * @return void
-     */
     public function testGetShipmentTypeStorageCollectionReturnsCollectionOfFoundStorageDataFilteredByShipmentTypeIds(): void
     {
         // Arrange
@@ -338,9 +308,6 @@ class ShipmentTypeStorageClientTest extends Unit
         $this->assertSame(static::TEST_ID_SHIPMENT_TYPE, $shipmentTypeStorageTransfer->getIdShipmentType());
     }
 
-    /**
-     * @return void
-     */
     public function testGetShipmentTypeStorageCollectionReturnsEmptyCollectionWhenNoStorageDataFoundByUuids(): void
     {
         // Arrange
@@ -371,9 +338,6 @@ class ShipmentTypeStorageClientTest extends Unit
         $this->assertCount(0, $shipmentTypeStorageCollectionTransfer->getShipmentTypeStorages());
     }
 
-    /**
-     * @return void
-     */
     public function testGetShipmentTypeStorageCollectionReturnsCollectionOfFoundStorageDataFilteredByUuids(): void
     {
         // Arrange
@@ -450,9 +414,6 @@ class ShipmentTypeStorageClientTest extends Unit
         $this->tester->getClient()->getShipmentTypeStorageCollection($shipmentTypeStorageCriteriaTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testGetAvailableShipmentTypesThrowsExceptionWithoutProvidedStore(): void
     {
         // Assert
@@ -462,9 +423,6 @@ class ShipmentTypeStorageClientTest extends Unit
         $this->tester->getClient()->getAvailableShipmentTypes((new QuoteTransfer()));
     }
 
-    /**
-     * @return void
-     */
     public function testGetAvailableShipmentTypesThrowsExceptionWithoutProvidedStoreName(): void
     {
         // Assert
@@ -474,9 +432,6 @@ class ShipmentTypeStorageClientTest extends Unit
         $this->tester->getClient()->getAvailableShipmentTypes((new QuoteTransfer())->setStore(new StoreTransfer()));
     }
 
-    /**
-     * @return void
-     */
     public function testGetAvailableShipmentTypesExecutesAvailableShipmentTypeFilterPlugins(): void
     {
         // Assert
@@ -516,9 +471,6 @@ class ShipmentTypeStorageClientTest extends Unit
         return $this->getMockBuilder(ShipmentTypeStorageToStorageClientInterface::class)->getMock();
     }
 
-    /**
-     * @return \Spryker\Client\ShipmentTypeStorageExtension\Dependency\Plugin\AvailableShipmentTypeFilterPluginInterface
-     */
     protected function getAvailableShipmentTypeFilterPluginMock(): AvailableShipmentTypeFilterPluginInterface
     {
         $availableShipmentTypeFilterPluginMock = $this->getMockBuilder(AvailableShipmentTypeFilterPluginInterface::class)->getMock();

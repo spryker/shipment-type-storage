@@ -30,17 +30,11 @@ class ShipmentTypeStorageCommunicationTester extends Actor
 {
     use _generated\ShipmentTypeStorageCommunicationTesterActions;
 
-    /**
-     * @return void
-     */
     public function ensureShipmentTypeDatabaseIsEmpty(): void
     {
         $this->ensureDatabaseTableIsEmpty($this->getShipmentTypeQuery());
     }
 
-    /**
-     * @return \Orm\Zed\ShipmentType\Persistence\SpyShipmentTypeQuery
-     */
     protected function getShipmentTypeQuery(): SpyShipmentTypeQuery
     {
         return SpyShipmentTypeQuery::create();

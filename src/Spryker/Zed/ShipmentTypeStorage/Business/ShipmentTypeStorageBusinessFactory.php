@@ -29,9 +29,6 @@ use Spryker\Zed\ShipmentTypeStorage\ShipmentTypeStorageDependencyProvider;
  */
 class ShipmentTypeStorageBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\ShipmentTypeStorage\Business\Writer\ShipmentTypeStorageWriterInterface
-     */
     public function createShipmentTypeStorageWriter(): ShipmentTypeStorageWriterInterface
     {
         return new ShipmentTypeStorageWriter(
@@ -45,17 +42,11 @@ class ShipmentTypeStorageBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ShipmentTypeStorage\Business\Mapper\ShipmentTypeStorageMapperInterface
-     */
     public function createShipmentTypeStorageMapper(): ShipmentTypeStorageMapperInterface
     {
         return new ShipmentTypeStorageMapper();
     }
 
-    /**
-     * @return \Spryker\Zed\ShipmentTypeStorage\Business\Expander\ShipmentTypeStorageExpanderInterface
-     */
     public function createShipmentTypeStorageExpander(): ShipmentTypeStorageExpanderInterface
     {
         return new ShipmentTypeStorageExpander(
@@ -64,41 +55,26 @@ class ShipmentTypeStorageBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ShipmentTypeStorage\Business\Reader\ShipmentMethodReaderInterface
-     */
     public function createShipmentMethodReader(): ShipmentMethodReaderInterface
     {
         return new ShipmentMethodReader($this->getShipmentFacade());
     }
 
-    /**
-     * @return \Spryker\Zed\ShipmentTypeStorage\Dependency\Facade\ShipmentTypeStorageToEventBehaviorFacadeInterface
-     */
     public function getEventBehaviorFacade(): ShipmentTypeStorageToEventBehaviorFacadeInterface
     {
         return $this->getProvidedDependency(ShipmentTypeStorageDependencyProvider::FACADE_EVENT_BEHAVIOR);
     }
 
-    /**
-     * @return \Spryker\Zed\ShipmentTypeStorage\Dependency\Facade\ShipmentTypeStorageToShipmentTypeFacadeInterface
-     */
     public function getShipmentTypeFacade(): ShipmentTypeStorageToShipmentTypeFacadeInterface
     {
         return $this->getProvidedDependency(ShipmentTypeStorageDependencyProvider::FACADE_SHIPMENT_TYPE);
     }
 
-    /**
-     * @return \Spryker\Zed\ShipmentTypeStorage\Dependency\Facade\ShipmentTypeStorageToStoreFacadeInterface
-     */
     public function getStoreFacade(): ShipmentTypeStorageToStoreFacadeInterface
     {
         return $this->getProvidedDependency(ShipmentTypeStorageDependencyProvider::FACADE_STORE);
     }
 
-    /**
-     * @return \Spryker\Zed\ShipmentTypeStorage\Dependency\Facade\ShipmentTypeStorageToShipmentFacadeInterface
-     */
     public function getShipmentFacade(): ShipmentTypeStorageToShipmentFacadeInterface
     {
         return $this->getProvidedDependency(ShipmentTypeStorageDependencyProvider::FACADE_SHIPMENT);

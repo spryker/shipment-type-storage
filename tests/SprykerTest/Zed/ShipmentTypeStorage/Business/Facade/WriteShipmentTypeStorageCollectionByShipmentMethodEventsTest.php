@@ -40,9 +40,6 @@ class WriteShipmentTypeStorageCollectionByShipmentMethodEventsTest extends Unit
      */
     protected ShipmentTypeStorageBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -53,9 +50,6 @@ class WriteShipmentTypeStorageCollectionByShipmentMethodEventsTest extends Unit
         $this->tester->setUpQueueAdapter();
     }
 
-    /**
-     * @return void
-     */
     public function testPersistsShipmentTypeStorageData(): void
     {
         // Arrange
@@ -91,9 +85,6 @@ class WriteShipmentTypeStorageCollectionByShipmentMethodEventsTest extends Unit
         $this->assertContainsEquals($shipmentMethodTransfer->getIdShipmentMethodOrFail(), $shipmentTypeStorageTransfer->getShipmentMethodIds());
     }
 
-    /**
-     * @return void
-     */
     public function testRemovesShipmentMethodIdWhenShipmentMethodIsDeactivated(): void
     {
         // Arrange
@@ -142,9 +133,6 @@ class WriteShipmentTypeStorageCollectionByShipmentMethodEventsTest extends Unit
         $this->assertNotContainsEquals($shipmentMethodTransfer2->getIdShipmentMethodOrFail(), $shipmentTypeStorageTransfer->getShipmentMethodIds());
     }
 
-    /**
-     * @return void
-     */
     public function testRemovesShipmentMethodIdWhenShipmentMethodShipmentTypeRelationIsRemoved(): void
     {
         // Arrange
@@ -194,9 +182,6 @@ class WriteShipmentTypeStorageCollectionByShipmentMethodEventsTest extends Unit
         $this->assertNotContainsEquals($shipmentMethodTransfer1->getIdShipmentMethodOrFail(), $shipmentTypeStorageTransfer->getShipmentMethodIds());
     }
 
-    /**
-     * @return void
-     */
     public function testRemovesShipmentMethodIdWhenShipmentMethodShipmentCarrierRelationIsUpdatedToInactiveCarrier(): void
     {
         // Arrange

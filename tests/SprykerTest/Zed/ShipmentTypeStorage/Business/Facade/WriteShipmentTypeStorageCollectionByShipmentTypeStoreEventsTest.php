@@ -50,9 +50,6 @@ class WriteShipmentTypeStorageCollectionByShipmentTypeStoreEventsTest extends Un
      */
     protected ShipmentTypeStorageBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -62,9 +59,6 @@ class WriteShipmentTypeStorageCollectionByShipmentTypeStoreEventsTest extends Un
         $this->tester->setUpQueueAdapter();
     }
 
-    /**
-     * @return void
-     */
     public function testPersistsShipmentTypeStorageData(): void
     {
         // Arrange
@@ -106,9 +100,6 @@ class WriteShipmentTypeStorageCollectionByShipmentTypeStoreEventsTest extends Un
         $this->assertSame($shipmentTypeTransfer->getIdShipmentTypeOrFail(), $shipmentTypeStorageTransfer->getIdShipmentType());
     }
 
-    /**
-     * @return void
-     */
     public function testRemovesShipmentTypeStorageWhenIdOfShipmentTypeWithRemovedStoreRelationIsProvided(): void
     {
         // Arrange
@@ -140,9 +131,6 @@ class WriteShipmentTypeStorageCollectionByShipmentTypeStoreEventsTest extends Un
         $this->assertNotNull($shipmentTypeStorageTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testExecutesExpanderPlugins(): void
     {
         // Assert
@@ -165,9 +153,6 @@ class WriteShipmentTypeStorageCollectionByShipmentTypeStoreEventsTest extends Un
         $this->tester->getFacade()->writeShipmentTypeStorageCollectionByShipmentTypeStoreEvents([$eventEntityTransfer]);
     }
 
-    /**
-     * @return void
-     */
     public function testShouldEarlyReturnWhenShipmentTypeCollectionIsEmpty(): void
     {
         // Arrange

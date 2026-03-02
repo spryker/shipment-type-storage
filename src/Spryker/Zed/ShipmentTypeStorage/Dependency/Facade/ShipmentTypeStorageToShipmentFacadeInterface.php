@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\ShipmentMethodCriteriaTransfer;
 
 interface ShipmentTypeStorageToShipmentFacadeInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentMethodCriteriaTransfer $shipmentMethodCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShipmentMethodCollectionTransfer
-     */
     public function getShipmentMethodCollection(
         ShipmentMethodCriteriaTransfer $shipmentMethodCriteriaTransfer
     ): ShipmentMethodCollectionTransfer;

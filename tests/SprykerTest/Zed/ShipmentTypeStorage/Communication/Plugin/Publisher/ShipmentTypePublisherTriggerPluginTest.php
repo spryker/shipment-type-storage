@@ -53,9 +53,6 @@ class ShipmentTypePublisherTriggerPluginTest extends Unit
      */
     protected ShipmentTypeStorageCommunicationTester $tester;
 
-    /**
-     * @return void
-     */
     public function testGetDataReturnsShipmentTypeTransfersAccordingToOffsetAndLimit(): void
     {
         // Arrange
@@ -77,9 +74,6 @@ class ShipmentTypePublisherTriggerPluginTest extends Unit
         $this->assertSame($shipmentTypeTransfer->getUuidOrFail(), $shipmentTypeTransfers[0]->getUuid());
     }
 
-    /**
-     * @return void
-     */
     public function testGetDataReturnsNoShipmentTypeTransfersWhenLimitIsEqualToZero(): void
     {
         // Arrange
@@ -97,9 +91,6 @@ class ShipmentTypePublisherTriggerPluginTest extends Unit
         $this->assertCount(0, $shipmentTypeTransfers);
     }
 
-    /**
-     * @return void
-     */
     public function testGetResourceNameReturnsCorrectResourceName(): void
     {
         // Act
@@ -109,9 +100,6 @@ class ShipmentTypePublisherTriggerPluginTest extends Unit
         $this->assertSame(static::SHIPMENT_TYPE_RESOURCE_NAME, $resourceName);
     }
 
-    /**
-     * @return void
-     */
     public function testGetEventNameReturnsCorrectEventName(): void
     {
         // Act
@@ -121,9 +109,6 @@ class ShipmentTypePublisherTriggerPluginTest extends Unit
         $this->assertSame(static::SHIPMENT_TYPE_PUBLISH, $eventName);
     }
 
-    /**
-     * @return void
-     */
     public function testGetIdColumnNameReturnsCorrectColumnName(): void
     {
         // Act

@@ -22,11 +22,6 @@ class ShipmentTypeStorageToPropelFacadeBridge implements ShipmentTypeStorageToPr
         $this->propelFacade = $propelFacade;
     }
 
-    /**
-     * @param string $tableName
-     *
-     * @return bool
-     */
     public function tableExists(string $tableName): bool
     {
         return $this->propelFacade->tableExists($tableName);

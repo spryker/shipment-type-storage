@@ -11,11 +11,6 @@ use Generated\Shared\Transfer\ShipmentMethodCollectionTransfer;
 
 interface ShipmentMethodReaderInterface
 {
-    /**
-     * @param string $storeName
-     *
-     * @return \Generated\Shared\Transfer\ShipmentMethodCollectionTransfer
-     */
     public function getActiveShipmentMethodCollectionTransferForStore(string $storeName): ShipmentMethodCollectionTransfer;
 
     /**

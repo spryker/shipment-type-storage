@@ -45,11 +45,6 @@ class ShipmentTypeReader implements ShipmentTypeReaderInterface
         $this->availableShipmentTypeFilterPlugins = $availableShipmentTypeFilterPlugins;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShipmentTypeCollectionTransfer
-     */
     public function getAvailableShipmentTypes(QuoteTransfer $quoteTransfer): ShipmentTypeCollectionTransfer
     {
         $storeName = $quoteTransfer->getStoreOrFail()->getNameOrFail();
@@ -71,11 +66,6 @@ class ShipmentTypeReader implements ShipmentTypeReaderInterface
         );
     }
 
-    /**
-     * @param string $storeName
-     *
-     * @return \Generated\Shared\Transfer\ShipmentTypeStorageCollectionTransfer
-     */
     protected function getStoreShipmentTypeStorages(string $storeName): ShipmentTypeStorageCollectionTransfer
     {
         $shipmentTypeStorageConditionsTransfer = (new ShipmentTypeStorageConditionsTransfer())
@@ -87,12 +77,6 @@ class ShipmentTypeReader implements ShipmentTypeReaderInterface
         return $this->shipmentTypeStorageReader->getShipmentTypeStorageCollection($shipmentTypeStorageCriteriaTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentTypeStorageCollectionTransfer $shipmentTypeStorageCollectionTransfer
-     * @param \Generated\Shared\Transfer\ShipmentTypeCollectionTransfer $shipmentTypeCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShipmentTypeCollectionTransfer
-     */
     protected function mapShipmentTypeStorageCollectionTransferToShipmentTypeCollectionTransfer(
         ShipmentTypeStorageCollectionTransfer $shipmentTypeStorageCollectionTransfer,
         ShipmentTypeCollectionTransfer $shipmentTypeCollectionTransfer
@@ -106,12 +90,6 @@ class ShipmentTypeReader implements ShipmentTypeReaderInterface
         return $shipmentTypeCollectionTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentTypeStorageCollectionTransfer $shipmentTypeStorageCollectionTransfer
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShipmentTypeStorageCollectionTransfer
-     */
     protected function executeAvailableShipmentTypeFilterPlugins(
         ShipmentTypeStorageCollectionTransfer $shipmentTypeStorageCollectionTransfer,
         QuoteTransfer $quoteTransfer

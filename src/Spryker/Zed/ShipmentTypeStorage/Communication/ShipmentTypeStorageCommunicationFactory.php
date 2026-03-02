@@ -19,9 +19,6 @@ use Spryker\Zed\ShipmentTypeStorage\ShipmentTypeStorageDependencyProvider;
  */
 class ShipmentTypeStorageCommunicationFactory extends AbstractCommunicationFactory
 {
-    /**
-     * @return \Spryker\Zed\ShipmentTypeStorage\Dependency\Facade\ShipmentTypeStorageToShipmentTypeFacadeInterface
-     */
     public function getShipmentTypeFacade(): ShipmentTypeStorageToShipmentTypeFacadeInterface
     {
         return $this->getProvidedDependency(ShipmentTypeStorageDependencyProvider::FACADE_SHIPMENT_TYPE);

@@ -24,12 +24,6 @@ class ShipmentTypeStorageEntityManager extends AbstractEntityManager implements 
      */
     protected const TABLE_NAME_SHIPMENT_TYPE_LIST_STORAGE = 'spy_shipment_type_list_storage';
 
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentTypeListStorageTransfer $shipmentTypeListStorageTransfer
-     * @param string $storeName
-     *
-     * @return void
-     */
     public function saveShipmentTypeListStorage(ShipmentTypeListStorageTransfer $shipmentTypeListStorageTransfer, string $storeName): void
     {
         if (!$this->isShipmentTypeListStorageTableExists()) {
@@ -45,12 +39,6 @@ class ShipmentTypeStorageEntityManager extends AbstractEntityManager implements 
         $shipmentTypeListStorageEntity->save();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentTypeStorageTransfer $shipmentTypeStorageTransfer
-     * @param string $storeName
-     *
-     * @return void
-     */
     public function saveShipmentTypeStorage(ShipmentTypeStorageTransfer $shipmentTypeStorageTransfer, string $storeName): void
     {
         $shipmentTypeStorageEntity = $this->getFactory()

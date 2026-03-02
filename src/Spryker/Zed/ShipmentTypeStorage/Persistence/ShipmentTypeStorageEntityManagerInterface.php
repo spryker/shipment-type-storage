@@ -12,20 +12,8 @@ use Generated\Shared\Transfer\ShipmentTypeStorageTransfer;
 
 interface ShipmentTypeStorageEntityManagerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentTypeListStorageTransfer $shipmentTypeListStorageTransfer
-     * @param string $storeName
-     *
-     * @return void
-     */
     public function saveShipmentTypeListStorage(ShipmentTypeListStorageTransfer $shipmentTypeListStorageTransfer, string $storeName): void;
 
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentTypeStorageTransfer $shipmentTypeStorageTransfer
-     * @param string $storeName
-     *
-     * @return void
-     */
     public function saveShipmentTypeStorage(ShipmentTypeStorageTransfer $shipmentTypeStorageTransfer, string $storeName): void;
 
     /**

@@ -32,12 +32,6 @@ class ShipmentTypeStorageMapper implements ShipmentTypeStorageMapperInterface
         return $shipmentTypeStorageTransfers;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentTypeTransfer $shipmentTypeTransfer
-     * @param \Generated\Shared\Transfer\ShipmentTypeStorageTransfer $shipmentTypeStorageTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShipmentTypeStorageTransfer
-     */
     protected function mapShipmentTypeTransferToShipmentTypeStorageTransfer(
         ShipmentTypeTransfer $shipmentTypeTransfer,
         ShipmentTypeStorageTransfer $shipmentTypeStorageTransfer

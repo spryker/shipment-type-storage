@@ -21,10 +21,6 @@ class ShipmentTypeStorageKeyScanner implements ShipmentTypeStorageKeyScannerInte
      */
     protected const DEFAULT_SCAN_KEY_PATTERN = 'shipment_type*uuid*';
 
-    /**
-     * @param \Spryker\Client\ShipmentTypeStorage\Dependency\Client\ShipmentTypeStorageToStorageClientInterface $storageClient
-     * @param \Spryker\Client\ShipmentTypeStorage\ShipmentTypeStorageConfig $shipmentTypeStorageConfig
-     */
     public function __construct(
         protected ShipmentTypeStorageToStorageClientInterface $storageClient,
         protected ShipmentTypeStorageConfig $shipmentTypeStorageConfig

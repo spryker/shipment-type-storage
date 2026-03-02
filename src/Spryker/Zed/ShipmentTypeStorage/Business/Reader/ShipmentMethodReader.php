@@ -19,19 +19,11 @@ class ShipmentMethodReader implements ShipmentMethodReaderInterface
      */
     protected ShipmentTypeStorageToShipmentFacadeInterface $shipmentFacade;
 
-    /**
-     * @param \Spryker\Zed\ShipmentTypeStorage\Dependency\Facade\ShipmentTypeStorageToShipmentFacadeInterface $shipmentFacade
-     */
     public function __construct(ShipmentTypeStorageToShipmentFacadeInterface $shipmentFacade)
     {
         $this->shipmentFacade = $shipmentFacade;
     }
 
-    /**
-     * @param string $storeName
-     *
-     * @return \Generated\Shared\Transfer\ShipmentMethodCollectionTransfer
-     */
     public function getActiveShipmentMethodCollectionTransferForStore(string $storeName): ShipmentMethodCollectionTransfer
     {
         $shipmentMethodConditionsTransfer = (new ShipmentMethodConditionsTransfer())

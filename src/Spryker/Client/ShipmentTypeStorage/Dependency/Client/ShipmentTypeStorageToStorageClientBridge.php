@@ -34,13 +34,6 @@ class ShipmentTypeStorageToStorageClientBridge implements ShipmentTypeStorageToS
         return $this->storageClient->getMulti($keys);
     }
 
-    /**
-     * @param string $pattern
-     * @param int $limit
-     * @param int|null $cursor
-     *
-     * @return \Generated\Shared\Transfer\StorageScanResultTransfer
-     */
     public function scanKeys(string $pattern, int $limit, ?int $cursor = 0): StorageScanResultTransfer
     {
         return $this->storageClient->scanKeys($pattern, $limit, $cursor);
@@ -56,11 +49,6 @@ class ShipmentTypeStorageToStorageClientBridge implements ShipmentTypeStorageToS
         return $this->storageClient->getKeys($pattern);
     }
 
-    /**
-     * @param string $key
-     *
-     * @return mixed
-     */
     public function get(string $key): mixed
     {
         return $this->storageClient->get($key);

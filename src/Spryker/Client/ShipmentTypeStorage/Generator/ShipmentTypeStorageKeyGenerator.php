@@ -23,9 +23,6 @@ class ShipmentTypeStorageKeyGenerator implements ShipmentTypeStorageKeyGenerator
      */
     protected ShipmentTypeStorageToSynchronizationServiceInterface $synchronizationService;
 
-    /**
-     * @param \Spryker\Client\ShipmentTypeStorage\Dependency\Service\ShipmentTypeStorageToSynchronizationServiceInterface $synchronizationService
-     */
     public function __construct(ShipmentTypeStorageToSynchronizationServiceInterface $synchronizationService)
     {
         $this->synchronizationService = $synchronizationService;
@@ -64,12 +61,6 @@ class ShipmentTypeStorageKeyGenerator implements ShipmentTypeStorageKeyGenerator
         return $storageKeys;
     }
 
-    /**
-     * @param string $reference
-     * @param string $storeName
-     *
-     * @return string
-     */
     protected function generateKey(string $reference, string $storeName): string
     {
         $synchronizationDataTransfer = (new SynchronizationDataTransfer())

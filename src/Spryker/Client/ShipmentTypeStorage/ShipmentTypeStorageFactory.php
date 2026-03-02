@@ -25,9 +25,6 @@ use Spryker\Client\ShipmentTypeStorage\Scanner\ShipmentTypeStorageKeyScannerInte
  */
 class ShipmentTypeStorageFactory extends AbstractFactory
 {
-    /**
-     * @return \Spryker\Client\ShipmentTypeStorage\Reader\ShipmentTypeStorageReaderInterface
-     */
     public function createShipmentTypeStorageReader(): ShipmentTypeStorageReaderInterface
     {
         return new ShipmentTypeStorageReader(
@@ -53,9 +50,6 @@ class ShipmentTypeStorageFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Client\ShipmentTypeStorage\Reader\ShipmentTypeReaderInterface
-     */
     public function createShipmentTypeReader(): ShipmentTypeReaderInterface
     {
         return new ShipmentTypeReader(
@@ -64,33 +58,21 @@ class ShipmentTypeStorageFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Client\ShipmentTypeStorage\Generator\ShipmentTypeStorageKeyGeneratorInterface
-     */
     public function createShipmentTypeStorageKeyGenerator(): ShipmentTypeStorageKeyGeneratorInterface
     {
         return new ShipmentTypeStorageKeyGenerator($this->getSynchronizationService());
     }
 
-    /**
-     * @return \Spryker\Client\ShipmentTypeStorage\Dependency\Client\ShipmentTypeStorageToStorageClientInterface
-     */
     public function getStorageClient(): ShipmentTypeStorageToStorageClientInterface
     {
         return $this->getProvidedDependency(ShipmentTypeStorageDependencyProvider::CLIENT_STORAGE);
     }
 
-    /**
-     * @return \Spryker\Client\ShipmentTypeStorage\Dependency\Service\ShipmentTypeStorageToSynchronizationServiceInterface
-     */
     public function getSynchronizationService(): ShipmentTypeStorageToSynchronizationServiceInterface
     {
         return $this->getProvidedDependency(ShipmentTypeStorageDependencyProvider::SERVICE_SYNCHRONIZATION);
     }
 
-    /**
-     * @return \Spryker\Client\ShipmentTypeStorage\Dependency\Service\ShipmentTypeStorageToUtilEncodingServiceInterface
-     */
     public function getUtilEncodingService(): ShipmentTypeStorageToUtilEncodingServiceInterface
     {
         return $this->getProvidedDependency(ShipmentTypeStorageDependencyProvider::SERVICE_UTIL_ENCODING);

@@ -33,9 +33,6 @@ class WriteShipmentTypeStorageCollectionByShipmentCarrierEventsTest extends Unit
      */
     protected ShipmentTypeStorageBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -46,9 +43,6 @@ class WriteShipmentTypeStorageCollectionByShipmentCarrierEventsTest extends Unit
         $this->tester->setUpQueueAdapter();
     }
 
-    /**
-     * @return void
-     */
     public function testPersistsShipmentTypeStorageData(): void
     {
         // Arrange
@@ -88,9 +82,6 @@ class WriteShipmentTypeStorageCollectionByShipmentCarrierEventsTest extends Unit
         $this->assertContainsEquals($shipmentMethodTransfer->getIdShipmentMethodOrFail(), $shipmentTypeStorageTransfer->getShipmentMethodIds());
     }
 
-    /**
-     * @return void
-     */
     public function testRemovesShipmentMethodIdWhenShipmentCarrierIsDeactivated(): void
     {
         // Arrange

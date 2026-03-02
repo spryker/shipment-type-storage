@@ -46,9 +46,6 @@ class GetShipmentTypeStorageSynchronizationDataTransfersTest extends Unit
      */
     protected ShipmentTypeStorageBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -58,9 +55,6 @@ class GetShipmentTypeStorageSynchronizationDataTransfersTest extends Unit
         $this->tester->setUpQueueAdapter();
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsEmptyCollectionWhenShipmentTypeStorageDataIsEmpty(): void
     {
         // Act
@@ -73,9 +67,6 @@ class GetShipmentTypeStorageSynchronizationDataTransfersTest extends Unit
         $this->assertEmpty($synchronizationDataTransfers);
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsEmptyCollectionWhenOffsetIsHigherThenAmountOfPersistedShipmentTypeStorages(): void
     {
         // Arrange
@@ -100,9 +91,6 @@ class GetShipmentTypeStorageSynchronizationDataTransfersTest extends Unit
         $this->assertEmpty($synchronizationDataTransfers);
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsEmptyCollectionWhenNoShipmentTypeStoragesFoundByGivenIds(): void
     {
         // Arrange
@@ -130,9 +118,6 @@ class GetShipmentTypeStorageSynchronizationDataTransfersTest extends Unit
         $this->assertEmpty($synchronizationDataTransfers);
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsLimitedCollectionWhenLimitIsGiven(): void
     {
         // Arrange
@@ -166,9 +151,6 @@ class GetShipmentTypeStorageSynchronizationDataTransfersTest extends Unit
         $this->assertCount(1, $synchronizationDataTransfers);
     }
 
-    /**
-     * @return void
-     */
     public function testReturnsFullCollectionWhenNoLimitationParamsGiven(): void
     {
         // Arrange

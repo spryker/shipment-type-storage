@@ -78,12 +78,6 @@ class ShipmentTypeStorageBusinessTester extends Actor
         });
     }
 
-    /**
-     * @param int $idShipmentType
-     * @param string $storeName
-     *
-     * @return \Generated\Shared\Transfer\ShipmentTypeStorageTransfer|null
-     */
     public function findShipmentTypeStorageTransfer(int $idShipmentType, string $storeName): ?ShipmentTypeStorageTransfer
     {
         $shipmenTypeStorageEntity = $this->getShipmentTypeStorageQuery()
@@ -98,45 +92,27 @@ class ShipmentTypeStorageBusinessTester extends Actor
         return (new ShipmentTypeStorageTransfer())->fromArray($shipmenTypeStorageEntity->getData(), true);
     }
 
-    /**
-     * @return void
-     */
     public function ensureShipmentTypeStorageTableIsEmpty(): void
     {
         $this->getShipmentTypeStorageQuery()->deleteAll();
         $this->getShipmentTypeListStorageQuery()->deleteAll();
     }
 
-    /**
-     * @return void
-     */
     public function ensureStoreTableIsEmpty(): void
     {
         $this->ensureDatabaseTableIsEmpty($this->getStoreQuery());
     }
 
-    /**
-     * @return int
-     */
     public function getShipmentTypeStorageEntitiesCount(): int
     {
         return $this->getShipmentTypeStorageQuery()->count();
     }
 
-    /**
-     * @return int
-     */
     public function getShipmentTypeListStorageEntitiesCount(): int
     {
         return $this->getShipmentTypeStorageQuery()->count();
     }
 
-    /**
-     * @param int $offset
-     * @param int $limit
-     *
-     * @return \Generated\Shared\Transfer\FilterTransfer
-     */
     public function createFilterTransfer(int $offset = 0, int $limit = 0): FilterTransfer
     {
         return (new FilterTransfer())
@@ -144,23 +120,12 @@ class ShipmentTypeStorageBusinessTester extends Actor
             ->setLimit($limit);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentTypeTransfer $shipmentTypeTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShipmentTypeStorageTransfer
-     */
     public function createShipmentTypeStorageTransfer(ShipmentTypeTransfer $shipmentTypeTransfer): ShipmentTypeStorageTransfer
     {
         return (new ShipmentTypeStorageTransfer())
             ->fromArray($shipmentTypeTransfer->toArray(), true);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentTypeStorageTransfer $shipmentTypeStorageTransfer
-     * @param \Generated\Shared\Transfer\StoreTransfer $storeTransfer
-     *
-     * @return void
-     */
     public function createShipmentTypeStorage(ShipmentTypeStorageTransfer $shipmentTypeStorageTransfer, StoreTransfer $storeTransfer): void
     {
         $shipmentTypeStorageEntity = new SpyShipmentTypeStorage();
@@ -197,9 +162,6 @@ class ShipmentTypeStorageBusinessTester extends Actor
         return $shipmentMethodTransfer;
     }
 
-    /**
-     * @return void
-     */
     public function setUpShipmentTypeShipmentMethodCollectionExpanderPluginDependency(): void
     {
         $this->setDependency(static::PLUGINS_SHIPMENT_METHOD_COLLECTION_EXPANDER, function () {
@@ -241,33 +203,21 @@ class ShipmentTypeStorageBusinessTester extends Actor
         ]);
     }
 
-    /**
-     * @return \Orm\Zed\ShipmentTypeStorage\Persistence\SpyShipmentTypeStorageQuery
-     */
     protected function getShipmentTypeStorageQuery(): SpyShipmentTypeStorageQuery
     {
         return SpyShipmentTypeStorageQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\ShipmentTypeStorage\Persistence\SpyShipmentTypeListStorageQuery
-     */
     protected function getShipmentTypeListStorageQuery(): SpyShipmentTypeListStorageQuery
     {
         return SpyShipmentTypeListStorageQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\Store\Persistence\SpyStoreQuery
-     */
     protected function getStoreQuery(): SpyStoreQuery
     {
         return SpyStoreQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\Shipment\Persistence\SpyShipmentMethodQuery
-     */
     protected function getShipmentMethodQuery(): SpyShipmentMethodQuery
     {
         return SpyShipmentMethodQuery::create();
