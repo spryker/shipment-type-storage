@@ -7,9 +7,9 @@
 
 namespace Spryker\Shared\ShipmentTypeStorage;
 
-use Spryker\Shared\Kernel\AbstractBundleConfig;
+use Spryker\Shared\Kernel\AbstractSharedConfig;
 
-class ShipmentTypeStorageConfig extends AbstractBundleConfig
+class ShipmentTypeStorageConfig extends AbstractSharedConfig
 {
     /**
      * Specification:
